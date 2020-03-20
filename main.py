@@ -41,11 +41,19 @@ def main():
     user3.speciality = 'mechanic'
     user3.address = 'module_2'
     user3.email = 'press_n@mars.org'
+    job1 = Jobs()
+    job1.team_leader = 1
+    job1.job = 'deployment of residential modules 1 and 2'
+    job1.work_size = 15
+    job1.collaborators = '2, 3'
+    job1.start_date = '(now)'
+    job1.is_finished = False
     session = db_session.create_session()
     session.add(captain)
     session.add(user1)
     session.add(user2)
     session.add(user3)
+    session.add(job1)
     session.commit()
     app.run()
 
